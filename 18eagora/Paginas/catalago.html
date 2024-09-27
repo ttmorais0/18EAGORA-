@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home18</title>
+    <link rel="icon" type="image/x-icon" href="../logo/icon_LOGO_azulescuro.png" >
+
+    <script>
+        window.onblur=function (){
+        document.title="volte sempre :) ";
+        };
+        window.onfocus = function () {
+        document.title="ué, já volto? :0 ";
+        };
+    </script>
+        
+    <link rel="stylesheet" href="18tou.css">
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=zlKbx8Tf"></script>
+
+    <style>
+
+  h1   {
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px; 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px; /* Adiciona uma margem negativa para compensar a margem interna dos itens */
+    
+  }
+  .col {
+    flex: 0 0 calc(30% - 10px); /* Define a largura de cada coluna */
+    margin: 20px; /* Adiciona uma margem entre as colunas */
+    background-color: #ab0505; /*Adiciona cor ao fundo das peças do catálogo*/
+    box-shadow: 0 2px 4px rgb(0, 0, 0); /* Adiciona uma sombra leve às colunas */
+    overflow: hidden;
+    /* animation: moveImages 3s ; Aplica a animação às imagens, sem isso não funciona, se escolhe o tempo que a animaçao acontece, e quantas vezes */
+   
+
+  }
+
+  @keyframes moveImages {
+        0% {
+            transform: translateX(100%); /* Começa a 100% da largura do container (totalmente à direita) */
+        }
+        100% {
+            transform: translateX(0%); /* Termina a 100% da largura do container (totalmente à esquerda) */
+        }
+        /*bem aqui, configuramos onde a imagem começa e onde termina, basicamente!!*/
+    }
+
+
+  .col img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 7px solid #000000; /* Adiciona uma borda inferior às imagens */
+  }
+  .col .info {
+    padding: 10px;
+  }
+  .col .info h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .col .info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #d3d3d3;
+  }
+        
+    </style>
+</head>
+<body>
+
+  <header>
+    <img src="../icons/icon_LUPA.png" class="lupa" onclick="toggleSearchBar()">
+    <div id="searchBar">
+        <input type="text" placeholder="Digite sua pesquisa aqui" onkeyup="filterCategories()" id="searchInput">
+        <div id="searchCategories">
+            <a href="https://www.redesenac.com.br/" target="_blank" class="category">Dinheiro</a>
+            <a href="catcomida.html" target="_blank" class="category">Comida</a>
+            <a href="https://www.redesenac.com.br/podcasts" target="_blank" class="category">Amor</a>
+        </div>
+    </div>
+    <script>
+        function toggleSearchBar() {
+            var searchBar = document.getElementById('searchBar');
+            var image = document.querySelector('.lupa');
+            if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                searchBar.style.display = 'block';
+                image.src = 'https://via.placeholder.com/150/ff0000/ffffff?text=Ocultar'; 
+            } else {
+                searchBar.style.display = 'none';
+                image.src = '../icons/icon_LUPA.png'; 
+            }
+        }
+
+        function filterCategories() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var categories = document.querySelectorAll('#searchCategories .category');
+            
+            categories.forEach(function(category) {
+                var text = category.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+<a href="18touhome.html"> <img src="../icons/icon_LOGO.png" class="logo"></a>
+    <img src="../icons/icon_USER.png" class="perfil">
+</header>
+    
+    <div class="corpo"> 
+    
+
+    <h1 style="color: black; text-align: center">Catálago</h1>
+
+        <div class="categorias">
+
+            <div class="caixa">
+                <img src="imagens/lazer.png">
+                <p class="titulo">Lazer</p>
+            </div>
+            <div class="caixa">
+                <img src="imagens/documentos.png">
+                <p class="titulo">Documentos</p>
+            </div>   
+        </div>
+        
+        <div class="categorias">
+            <div class="caixa">
+                <img src="imagens/culinaria.png">
+                <p class="titulo">Culinária</p>
+            </div>
+            <div class="caixa">
+                <img src="imagens/saude.png">
+                <p class="titulo">Saúde</p>
+            </div>
+        </div>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        h1,p{
+            font-family: "Ubuntu", sans-serif;
+        }
+        .categorias{
+            width: 1000px;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .caixa{
+            color: white;
+            width: 45%;
+            height: 250px;
+            background-color: rgba(23, 126, 137, 1);
+            float: left;
+            margin-right: 4%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: 0.05s;
+        }
+        .caixa img{
+            display: block;
+            object-fit: cover;
+            flex-shrink: 0;
+            min-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        .caixa p{
+            text-align: center;
+            margin: auto;
+            display: inherit;
+            position: absolute;
+            font-size: 30px;
+        }
+        .caixa:hover{
+            transform: scale(1.1);
+        }
+    </style>
+    
+    <footer>18</footer>
+</body>
+</html>
