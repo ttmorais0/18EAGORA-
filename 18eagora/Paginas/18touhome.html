@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home18</title>
+    <title>Home18</title>
     <link rel="icon" type="image/x-icon" href="../logo/icon_LOGO_azulescuro.png" >
 
     <script>
         window.onblur=function (){
-        document.title="volte sempre :) ";
+        document.title="Volte sempre :) ";
         };
         window.onfocus = function () {
-            document.title="ué, já volto? :0 ";
+            document.title="Ué, já volto? :0 ";
         };
         </script>
 
@@ -30,10 +30,6 @@
 
 <script src="https://code.responsivevoice.org/responsivevoice.js?key=zlKbx8Tf"></script>
 
-
-    <style>
-        
-    </style>
 </head>
 <body >
 
@@ -54,17 +50,10 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('overlay').style.display = 'none'; //faz a capa sumir, ou seja é como se nao existisse, nao atrapalha em nada
   
       }, 1000);
-    }, 2000); // Tempo de exibição da capa em milissegundos
+    }, 1000); // Tempo de exibição da capa em milissegundos
   });
 
     </script>
-
-
-
-
-
-
-
 
 
 
@@ -79,14 +68,17 @@ document.addEventListener("DOMContentLoaded", function() {
     <header>
         <img src="../icons/icon_LUPA.png" class="lupa" onclick="toggleSearchBar()">
         <div id="searchBar">
-            <input type="text" placeholder="Digite sua pesquisa aqui" onkeyup="filterCategories()" id="searchInput">
+            <input type="text" placeholder="Informe uma categoria" onkeyup="filterCategories()" id="searchInput">
             <div id="searchCategories">
-                <a href="https://www.redesenac.com.br/" target="_blank" class="category">Dinheiro</a>
-                <a href="catcomida.html" target="_blank" class="category">Comida</a>
-                <a href="https://www.redesenac.com.br/podcasts" target="_blank" class="category">Amor</a>
+                <a href="../Paginas/categorias/catBemEstar.html" target="_blank" class="category">Bem-estar e lazer</a>
+                <a href="../Paginas/categorias/catDocumentacao.html" target="_blank" class="category">Documentação</a>
+                <a href="../Paginas/categorias/catManutencao.html" target= "_blank class= "category">Manutenção</a>
+                <a href="../Paginas/categorias/catEconomia.html" target="_blank" class="category">Economia</a>
+                <a href="../Paginas/categorias/catComida.html" target="_blank" class="category">Gastronomia</a>
             </div>
         </div>
-        <script>
+      
+      <script>
             function toggleSearchBar() {
                 var searchBar = document.getElementById('searchBar');
                 var image = document.querySelector('.lupa');
@@ -118,14 +110,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <img src="../icons/icon_USER.png" class="perfil">
     </header>
-
-
-
-
-
-
-
-
 
 
 
@@ -189,18 +173,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 
             
         </article>
+    
 
-       
-        
-        
-        
-    
-    
-    
     </div>
     
 
     <!--FOOTER----------------------------------------------------------------------------------->
-    <footer>18</footer>
+    <footer>18, e agora?</footer>
 </body>
 </html>
