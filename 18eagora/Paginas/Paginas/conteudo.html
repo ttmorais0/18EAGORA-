@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home18</title>
+    <link rel="icon" type="image/x-icon" href="../logo/icon_LOGO_azulescuro.png" >
+
+    <script>
+        window.onblur=function (){
+        document.title="volte sempre :) ";
+        };
+        window.onfocus = function () {
+            document.title="ué, já volto? :0 ";
+        };
+        </script>
+        
+    <link rel="stylesheet" href="18tou.css">
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=zlKbx8Tf"></script>
+
+    <style>
+        .container {
+            display: flex; /* Usa Flexbox para layout */
+            align-items: flex-start; /* Alinha o conteúdo no topo */
+            justify-content: space-between; /* Distribui o espaço entre os itens */
+            gap: 20px; /* Espaçamento entre o texto e o vídeo */
+        }
+        .text {
+            flex: 1; /* Ocupa o espaço disponível à esquerda do vídeo */
+            max-width: 100%; /* Ajuste a largura máxima para garantir que o texto não fique muito largo */
+        }
+        .video {
+            flex: 0 0 auto; /* O vídeo não cresce e não encolhe */
+            width: 300px; /* Largura fixa para o vídeo */
+            height: 200px; /* Altura fixa para o vídeo */
+        }
+        .video iframe {
+            width: 100%; /* Faz com que o iframe ocupe toda a largura do contêiner do vídeo */
+            height: 100%; /* Faz com que o iframe ocupe toda a altura do contêiner do vídeo */
+        }
+
+        #product-video {
+            width: 100%; /* Faz com que o iframe ocupe toda a largura do contêiner do vídeo */
+            height: 100%; /* Faz com que o iframe ocupe toda a altura do contêiner do vídeo */
+            
+        }
+
+        h1 {
+            color: rgb(255, 208, 0);
+        }
+
+        .back-button {
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            border: 5px rgb(255, 255, 255) solid;
+            border-radius: 3px;
+            border-style: double;
+            padding: 5px;
+            width: fit-content;
+        }
+        .back-button:hover {
+            color: rgb(219, 197, 0);
+            font-size: 20px;
+        }
+
+
+        #product-name {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        aside{
+            position: fixed;
+            right: 0;
+            width: 30%
+            
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="../icons/icon_LUPA.png" class="lupa" onclick="toggleSearchBar()">
+        <div id="searchBar">
+            <input type="text" placeholder="Digite sua pesquisa aqui" onkeyup="filterCategories()" id="searchInput">
+            <div id="searchCategories">
+                <a href="https://www.redesenac.com.br/" target="_blank" class="category">Dinheiro</a>
+                <a href="catcomida.html" target="_blank" class="category">Comida</a>
+                <a href="https://www.redesenac.com.br/podcasts" target="_blank" class="category">Amor</a>
+            </div>
+        </div>
+        <script>
+            function toggleSearchBar() {
+                var searchBar = document.getElementById('searchBar');
+                var image = document.querySelector('.lupa');
+                if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                    searchBar.style.display = 'block';
+                    image.src = 'https://via.placeholder.com/150/ff0000/ffffff?text=Ocultar'; 
+                } else {
+                    searchBar.style.display = 'none';
+                    image.src = '../icons/icon_LUPA.png'; 
+                }
+            }
+
+            function filterCategories() {
+                var input = document.getElementById('searchInput').value.toLowerCase();
+                var categories = document.querySelectorAll('#searchCategories .category');
+                
+                categories.forEach(function(category) {
+                    var text = category.textContent.toLowerCase();
+                    if (text.includes(input)) {
+                        category.style.display = 'block';
+                    } else {
+                        category.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+
+       <a href="18touhome.html"> <img src="../icons/icon_LOGO.png" class="logo"></a>
+
+        <img src="../icons/icon_USER.png" class="perfil">
+    </header>
+    
+
+    <!--INFORMAÇÕESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS-->
+    <div class="conteudo"> 
+        <div class="container">
+            
+
+            <div class="product-details">
+
+                <a href="javascript:void(0)" class="back-button" onclick="history.back()">Voltar ao Catálogo</a>
+                <div class="text">
+                    <h1 id="product-name"></h1>
+                    <p id="product-type"></p>
+                    <p id="product-price"></p>
+                    <p id="product-description" class="mid"></p>
+                </div>
+
+                
+            </div><div class="video">
+                    <iframe id="product-video" src="" alt="" frameborder="0" allowfullscreen class="video"></iframe>
+                </div>
+        </div>
+    </div>
+
+
+
+  <script>
+   
+    const clothingItems = [
+    { 
+        id: '1', 
+        name: 'comida', 
+        price: '"eu quero voltar para casa "', 
+        type: 'Cavaleira', 
+        description: '""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non urna et orci malesuada efficitur. Vivamus eu magna erat. Donec vitae purus a mi elementum pharetra. Integer vitae ligula ut risus aliquet hendrerit non eget lacus. Duis auctor turpis in dui dictum, eget feugiat dolor cursus. Suspendisse potenti. Proin non neque a nulla commodo auctor. Vivamus tincidunt purus eu lacus vehicula convallis.>Curabitur ut erat non metus egestas volutpat. Morbi nec urna a turpis feugiat sodales et id erat. Sed ut mauris nec ipsum gravida vehicula ut nec mauris. Aenean congue gravida ex, vel tincidunt augue consequat id.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non urna et orci malesuada efficitur. Vivamus eu magna erat. Donec vitae purus a mi elementum pharetra. Integer vitae ligula ut risus aliquet hendrerit non eget lacus. Duis auctor turpis in dui dictum, eget feugiat dolor cursus. Suspendisse potenti. Proin non neque a nulla commodo auctor. Vivamus tincidunt purus eu lacus vehicula convallis.<p>Curabitur ut erat non metus egestas volutpat. Morbi nec urna a turpis feugiat sodales et id erat. Sed ut mauris nec ipsum gravida vehicula ut nec mauris. Aenean congue gravida ex, vel tincidunt augue consequat id.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non urna et orci malesuada efficitur. Vivamus eu magna erat. Donec vitae purus a mi elementum pharetra. Integer vitae ligula ut risus aliquet hendrerit non eget lacus. Duis auctor turpis in dui dictum, eget feugiat dolor cursus. Suspendisse potenti. Proin non neque a nulla commodo auctor. Vivamus tincidunt purus eu lacus vehicula convallis.Curabitur ut erat non metus egestas volutpat. Morbi nec urna a turpis feugiat sodales et id erat. Sed ut mauris nec ipsum gravida vehicula ut nec mauris. Aenean congue gravida ex, vel tincidunt augue consequat id."' ,
+
+       
+        video: 'https://www.youtube.com/embed/dNGed9DxpI8',
+        images: [
+            'https://dcdn.mitiendanube.com/stores/001/956/702/products/dc4f6f93-ac3e-4834-81d7-971d67295248-120cc72f6564443ed416577405154792-1024-1024.jpeg',
+            'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C696DEB9B985C90EF0E88A60A21C4E4FE89EB2B5E4E8BC31B31EE75E2C493EA0/scale?width=1200&amp;aspectRatio=1.78&amp;format=webp',
+            'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F63C3AC9B644F2D8ACD0A72847310A3854F763BFE484C84493AB66AD8E55EB49/scale?width=1200&aspectRatio=1.78&format=webp',
+            'https://tm.ibxk.com.br/2023/10/06/06153213272329.jpg'
+            // Adicione quantas URLs de imagem desejar
+        ]
+    },
+    { 
+        id: '2', 
+        name: 'Chapeleiro Maluco', 
+        price: '"É hora do Chá"', 
+        type: 'Chapeleiro', 
+        description: '',
+        images: [
+            'https://static.wikia.nocookie.net/disney/images/6/6d/Madhatterdisney.png/revision/latest?cb=20171025213114&path-prefix=pt-br',
+            'https://www.cursodavida.com.br/wp-content/uploads/2017/10/alice-02-1024x585.jpg',
+            'https://www.researchgate.net/publication/277277993/figure/fig6/AS:614364906258438@1523487416338/Figura-1-Chapeleiro-maluco-no-filme-Alice-no-Pais-das-Maravilhas-obra-de-Lewis.png',
+            'https://static.wikia.nocookie.net/alice/images/7/79/Mad_Hatter_freed.png/revision/latest?cb=20140927134709&path-prefix=pt-br'
+            // Adicione quantas URLs de imagem desejar
+        ]
+    },
+    { 
+        id: '3', 
+        name: 'Calça Jeans Skinny', 
+        price: '$39.99', 
+        type: 'Calça', 
+        image: 'https://img.irroba.com.br/fit-in/600x900/filters:fill(fff):quality(80)/subleeee/catalog/bruna3.JPG',
+        images: [
+            'https://img.irroba.com.br/fit-in/600x900/filters:fill(fff):quality(80)/subleeee/catalog/bruna3.JPG',
+            'https://img.irroba.com.br/fit-in/600x900/filters:fill(fff):quality(80)/subleeee/catalog/bruna3.JPG',
+            'https://img.irroba.com.br/fit-in/600x900/filters:fill(fff):quality(80)/subleeee/catalog/bruna3.JPG'
+            // Adicione quantas URLs de imagem desejar
+        ]
+    }
+    // Adicione mais itens de roupa 
+];
+
+    // Função para obter parâmetros de consulta da URL
+    function getQueryParam(param) {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      return urlParams.get(param);
+    }
+
+    // Função para carregar e exibir os detalhes do produto
+    function loadProductDetails() {
+      const productId = getQueryParam('id'); 
+      const product = clothingItems.find(item => item.id === productId);
+
+      if (product) {
+        
+        document.getElementById('product-video').src = product.video;
+        document.getElementById('product-name').textContent = product.name;
+        document.getElementById('product-type').textContent = `Tipo: ${product.type}`;
+        document.getElementById('product-price').textContent = product.price;
+        document.getElementById('product-description').textContent = product.description;
+        // Outras informações específicas do produto podem ser exibidas aqui
+
+       
+
+       
+       
+      } else {
+        // Produto não encontrado, exibir mensagem de erro ou redirecionar para página de erro
+        alert('Produto não encontrado.');
+        // window.location.href = 'pagina_de_erro.html';
+      }
+    }
+
+    // Chama a função para carregar os detalhes do produto ao carregar a página
+    window.onload = loadProductDetails;
+  </script>
+        
+
+   <!--Anuncios------------------------------------------------------------------------------------------------------------------------>
+
+        <div class="slider-container">
+            <div class="slider">
+                <a href="https://static.itdg.com.br/images/360-240/8d5ffb7df41dfd990ce1a20b1c45c36f/shutterstock-184374716-1-.jpg" target="_blank" class="slide">
+                    <img src="https://link2.com" target="_blank"><img src="https://imageswscdn.wslojas.com.br/files/24534/MED_feijao-preto-nacional-5kg-pacote-75-1.jpg" alt="Imagem 1">
+                    <div class="info">
+                        <h2>Arroz</h2>
+                        <p>Descrição breve.</p>
+                    </div>
+                </a>
+                <a href="https://link2.com" target="_blank" class="slide">
+                    <img src="https://static.itdg.com.br/images/360-240/8d5ffb7df41dfd990ce1a20b1c45c36f/shutterstock-184374716-1-.jpg" alt="Imagem 2">
+                    <div class="info">
+                        <h2>Feijão</h2>
+                        <p>Descrição breve.</p>
+                    </div>
+                </a>
+                <a href="https://link3.com" target="_blank" class="slide">
+                    <img src="https://img.estadao.com.br/resources/jpg/8/1/1513810007518.jpg" alt="Imagem 3">
+                    <div class="info">
+                        <h2>Farofa</h2>
+                        <p>Descrição breve.</p>
+                    </div>
+                </a>
+                <a href="https://link4.com" target="_blank" class="slide">
+                    <img src="https://img.band.uol.com.br/image/2023/09/25/salada-1549_800x450.webp" alt="Imagem 4">
+                    <div class="info">
+                        <h2>Salada</h2>
+                        <p>Descrição breve.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    
+
+    <div class="aside">
+
+        <ul>
+            <li><a href="#" title="Dinheiro">Dinheiro</a></li>
+            <li><a href="#" title="Comida">Comida</a></li>
+            <li><a href="#" title="Amor">Amor</a></li>
+           
+            </ul>
+    </div>
+
+    </div>
+      </div>
+    <footer>18</footer>
+</body>
+</html>
