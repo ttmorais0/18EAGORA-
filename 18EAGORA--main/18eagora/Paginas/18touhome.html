@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home18</title>
+    <link rel="icon" type="image/x-icon" href="../logo/icon_LOGO_azulescuro.png" >
+
+    <script>
+        window.onblur=function (){
+        document.title="Volte sempre :) ";
+        };
+        window.onfocus = function () {
+            document.title="Ué, já volto? :0 ";
+        };
+        </script>
+
+    <link rel="stylesheet" href="18tou.css">
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=zlKbx8Tf"></script>
+
+</head>
+<body >
+
+    <!--Intro do site----------------------------------------------------->
+
+    <div id="overlay">
+        <div class="overlay-content">
+          <img src="../Gifs/anima-home.gif">
+        </div>
+    </div>
+
+    <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {//faz a capa só comecar a animar dps da pagina carregar 100%
+      document.getElementById('overlay').style.opacity = '0';
+      setTimeout(function() {//faz a transição ser suave
+        document.getElementById('overlay').style.display = 'none'; //faz a capa sumir, ou seja é como se nao existisse, nao atrapalha em nada
+  
+      }, 1000);
+    }, 1000); // Tempo de exibição da capa em milissegundos
+  });
+    </script>
+
+<!--HEADER----------------------------------------------------------------------------------->
+    <header>
+        <img src="../icons/icon_LUPA.png" class="lupa" onclick="toggleSearchBar()">
+        <div id="searchBar">
+            <input type="text" placeholder="Informe uma categoria" onkeyup="filterCategories()" id="searchInput">
+            <div id="searchCategories">
+                <a href="../Paginas/categorias/catBemEstar.html" target="_blank" class="category">Bem-estar e lazer</a>
+                <a href="../Paginas/categorias/catDocumentacao.html" target="_blank" class="category">Documentação</a>
+                <a href="../Paginas/categorias/catManutencao.html" target= "_blank class= "category">Manutenção</a>
+                <a href="../Paginas/categorias/catEconomia.html" target="_blank" class="category">Economia</a>
+                <a href="../Paginas/categorias/catComida.html" target="_blank" class="category">Gastronomia</a>
+            </div>
+        </div>
+      
+      <script>
+            function toggleSearchBar() {
+                var searchBar = document.getElementById('searchBar');
+                var image = document.querySelector('.lupa');
+                if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                    searchBar.style.display = 'block';
+                    image.src = 'https://via.placeholder.com/150/ff0000/ffffff?text=Ocultar'; 
+                } else {
+                    searchBar.style.display = 'none';
+                    image.src = '../icons/icon_LUPA.png'; 
+                }
+            }
+
+            function filterCategories() {
+                var input = document.getElementById('searchInput').value.toLowerCase();
+                var categories = document.querySelectorAll('#searchCategories .category');
+                
+                categories.forEach(function(category) {
+                    var text = category.textContent.toLowerCase();
+                    if (text.includes(input)) {
+                        category.style.display = 'block';
+                    } else {
+                        category.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+
+<a href="18touhome.html"> <img src="../icons/icon_LOGO.png" class="logo"></a>
+
+        <img src="../icons/icon_USER.png" class="perfil">
+    </header>
+
+<!--CORPO--------------------------------------------------------------------------------------->
+
+    <div class="corpo"> 
+
+    <div class="banner">
+        <img src="../Gifs/capafundo.gif">
+        <div class="textoo">
+        <p class="textocapa" data-hover="18 e agora?">18EAGR?</p>
+        <p>Seu site guia de informações para a vida adulta</p>
+        <a href="catalago.html"><button>Catálago</button></a>
+        <button>Login</button>
+        </div>
+    </div>
+
+      <h1 class="titulo">Seja bem-vindo</h1>
+        <article class="coluna3">
+            <p>O “18 e agora?” é um projeto independente, feito por estudantes que querem ajudar outras pessoas que estão atingindo a maioridade e se sentem perdidos por onde começar.</p>
+            <h3 class="subtitulo">Mais recente</h3>
+            <article class="miniview">
+                <img src="imagens/culinaria.png">
+            </article>
+            <br>
+            <article class="miniview">
+                <img src="imagens/lazer.png">
+            </article>
+            <br>
+            <article class="miniview">
+                <img src="imagens/documentos.png">
+            </article>
+        </article>
+        <article class="coluna4">
+            <h3 class="subtitulo">Por que criar uma conta no 18EAGR?</h3>
+            <p>
+            <b>Experiência personalizada:</b> Receba recomendações de matérias que possam te interessar;<br>
+            <b>Comentar e avaliar matérias:</b> Deixe sua marca e opinião no site! Participe da comunidade 18EAGR?;<br>
+            <b>Histórico:</b> Marque as matérias que você leu ou quer ler.
+            </p>
+            <button>Criar conta</button>
+            <button>Fazer login</button>
+        </article>
+    </div> 
+
+    <!--FOOTER----------------------------------------------------------------------------------->
+    <footer>18, e agora?</footer>
+</body>
+</html>
