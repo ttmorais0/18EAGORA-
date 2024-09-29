@@ -1,0 +1,59 @@
+a {
+  text-decoration: none;
+}
+  h1   {
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px; 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    
+  }
+  
+         .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px; /* Adiciona uma margem negativa para compensar a margem interna dos itens */
+    
+  }
+  .col {
+    flex: 0 0 calc(15% - 20px); /* Define a largura de cada coluna */
+    margin: 20px; /* Adiciona uma margem entre as colunas */
+    background-color: #383838; /*Adiciona cor ao fundo das peças do catálogo*/
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0, 0, 0); /* Adiciona uma sombra leve às colunas */
+    overflow: hidden;
+    animation: moveImages 3s ; /* Aplica a animação às imagens, sem isso não funciona, se escolhe o tempo que a animaçao acontece, e quantas vezes */
+   
+
+  }
+  @keyframes moveImages {
+        0% {
+            transform: translateX(100%); /* Começa a 100% da largura do container (totalmente à direita) */
+        }
+        100% {
+            transform: translateX(0%); /* Termina a 100% da largura do container (totalmente à esquerda) */
+        }
+
+        /*bem aqui, configuramos onde a imagem começa e onde termina, basicamente!!*/
+    }
+
+
+  .col img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 7px solid #000000; /* Adiciona uma borda inferior às imagens */
+  }
+  .col .info {
+    padding: 10px;
+  }
+  .col .info h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .col .info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #d3d3d3;
+  }
+        

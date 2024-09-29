@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home18</title>
+    <link rel="icon" type="image/x-icon" href="../logo/icon_LOGO_azulescuro.png" >
+    <link rel="stylesheet" href="../styleCat.css">
+
+    <script>
+        window.onblur=function (){
+        document.title="volte sempre :) ";
+        };
+        window.onfocus = function () {
+            document.title="ué, já volto? :0 ";
+        };
+        </script>
+        
+    <link rel="stylesheet" href="../18tou.css">
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=zlKbx8Tf"></script>
+</head>
+
+<body>
+
+  <header>
+    <img src="../../icons/icon_LUPA.png" class="lupa" onclick="toggleSearchBar()">
+        <div id="searchBar">
+            <input type="text" placeholder="Informe uma categoria" onkeyup="filterCategories()" id="searchInput">
+            <div id="searchCategories">
+                <a href="../../Paginas/categorias/catBemEstar.html" target="_blank" class="category">Bem-estar e lazer</a>
+                <a href="../../Paginas/categorias/catDocumentacao.html" target="_blank" class="category">Documentação</a>
+                <a href="../../Paginas/categorias/catManutencao.html" target= "_blank class= "category">Manutenção</a>
+                <a href="../../Paginas/categorias/catEconomia.html" target="_blank" class="category">Economia</a>
+                <a href="../../Paginas/categorias/catComida.html" target="_blank" class="category">Gastronomia</a>
+            </div>
+        </div>
+      
+      <script>
+            function toggleSearchBar() {
+                var searchBar = document.getElementById('searchBar');
+                var image = document.querySelector('.lupa');
+                if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                    searchBar.style.display = 'block';
+                    image.src = 'https://via.placeholder.com/150/ff0000/ffffff?text=Ocultar'; 
+                } else {
+                    searchBar.style.display = 'none';
+                    image.src = '../../icons/icon_LUPA.png'; 
+                }
+            }
+
+            function filterCategories() {
+                var input = document.getElementById('searchInput').value.toLowerCase();
+                var categories = document.querySelectorAll('#searchCategories .category');
+                
+                categories.forEach(function(category) {
+                    var text = category.textContent.toLowerCase();
+                    if (text.includes(input)) {
+                        category.style.display = 'block';
+                    } else {
+                        category.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+
+<a href="../18touhome.html"> <img src="../../icons/icon_LOGO.png" class="logo"></a>
+    <img src="../../icons/icon_USER.png" class="perfil">
+</header>
+    
+    <div class="corpo"> 
+
+
+        <div class="row" id="clothing-row">
+            <!-- Aqui será inserido dinamicamente o HTML das peças de roupa -->
+        </div>
+    </div>
+    
+    <script>
+      // Dados fictícios das peças de roupa
+      const clothingItems = [
+          { id: 1, image: 'https://www.tendaatacado.com.br/dicas/wp-content/uploads/2022/06/como-fazer-batata-frita-topo.jpg',
+          name: 'Batata frita',
+          price: 'Frita no óleo',
+          type: '',
+          description: 'Carboidrato.'},
+         
+          { id: 2, image: 'https://static.itdg.com.br/images/360-240/8d5ffb7df41dfd990ce1a20b1c45c36f/shutterstock-184374716-1-.jpg',
+          name: 'Arroz branco',
+          price: 'Panela comum',
+          type: '',
+          description: 'Carboidrato.'},
+
+          { id: 3, image: 'https://imageswscdn.wslojas.com.br/files/24534/MED_feijao-preto-nacional-5kg-pacote-75-1.jpg',
+          name: 'Feijão preto',
+          price: '',
+          type: 'Panela de pressão',
+          description: 'Carboidrato.'},
+
+          { id: 4, image: 'https://img.estadao.com.br/resources/jpg/8/1/1513810007518.jpg',
+          name: 'Farofa',
+          price: '',
+          type: 'Farofa de cenoura',
+          description: 'Carboidrato.'},
+        
+          // Adicione mais peças de roupa aqui...
+      ];
+      
+    // Função para gerar o HTML das peças de roupa
+  function generateClothingHTML(item) {
+    return `
+    <div class="col">
+      <a href="../../Paginas/conteudo.html?id=${item.id}">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="info">
+          <h1>${item.name}</h1>
+          <p>${item.type}</p>
+          <p>${item.price}</p>
+        </div>
+      </a>
+    </div>
+    `;
+  }
+      
+      // Função para renderizar as peças de roupa
+      function renderClothingItems() {
+          const clothingRow = document.getElementById('clothing-row');
+          let clothingHTML = '';
+          clothingItems.forEach(item => {
+          clothingHTML += generateClothingHTML(item);
+          });
+          clothingRow.innerHTML = clothingHTML;
+      }
+      
+      // Renderização inicial das peças de roupa
+      renderClothingItems();
+      
+    
+    </script>
+
+    </div>
+    
+    <footer>18, e agora?</footer>
+</body>
+</html>

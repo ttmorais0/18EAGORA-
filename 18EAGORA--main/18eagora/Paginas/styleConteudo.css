@@ -1,0 +1,60 @@
+.container {
+    display: flex; /* Usa Flexbox para layout */
+    align-items: flex-start; /* Alinha o conteúdo no topo */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    gap: 20px; /* Espaçamento entre o texto e o vídeo */
+}
+
+.text {
+    flex: 1; /* Ocupa o espaço disponível à esquerda do vídeo */
+    max-width: 100%; /* Ajuste a largura máxima para garantir que o texto não fique muito largo */
+}
+
+.video {
+    flex: 0 0 auto; /* O vídeo não cresce e não encolhe */
+    width: 300px; /* Largura fixa para o vídeo */
+    height: 200px; /* Altura fixa para o vídeo */
+}
+
+.video iframe {
+    width: 100%; /* Faz com que o iframe ocupe toda a largura do contêiner do vídeo */
+    height: 100%; /* Faz com que o iframe ocupe toda a altura do contêiner do vídeo */
+}
+
+#product-video {
+    width: 100%; /* Faz com que o iframe ocupe toda a largura do contêiner do vídeo */
+    height: 100%; /* Faz com que o iframe ocupe toda a altura do contêiner do vídeo */
+
+}
+
+h1 {
+    color: rgb(255, 208, 0);
+}
+
+.back-button {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 5px rgb(255, 255, 255) solid;
+    border-radius: 3px;
+    border-style: double;
+    padding: 5px;
+    width: fit-content;
+}
+
+.back-button:hover {
+    color: rgb(219, 197, 0);
+    font-size: 20px;
+}
+
+
+#product-name {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+aside {
+    position: fixed;
+    right: 0;
+    width: 30%
+}
