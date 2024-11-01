@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home18</title>
+    <link rel="icon" type="image/x-icon" href="../logo/icon_LOGO_azulescuro.png">
+
+    
+    <link id="themeStylesheet" rel="stylesheet" href="18tou.css">
+
+    <script>
+        window.onblur = function() {
+            document.title = "Volte sempre :) ";
+        };
+        window.onfocus = function() {
+            document.title = "Ué, já voltou? :0 ";
+        };
+    </script>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=zlKbx8Tf"></script>
+</head>
+<body>
+
+    <!--HEADER----------------------------------------------------------------------------------->
+    <header>
+        <div class="elementosheader">
+            <img src="../icons/icon_LUPA.png" class="lupa" onclick="toggleSearchBar()">
+            <div id="searchBar">
+                <input type="text" placeholder="Informe uma categoria" onkeyup="filterCategories()" id="searchInput">
+                <div id="searchCategories">
+                    <a href="categorias/catLazer.html" target="_blank" class="category">Lazer</a>
+                    <a href="categorias/catComida.html" target="_blank" class="category">Culinária</a>
+                    <a href="categorias/catDocumentacao.html" target="_blank" class="category">Documentação</a>
+                    <a href="categorias/catSaude.html" target="_blank" class="category">Saúde</a>
+                    <a href="categorias/catEducacao.html" target="_blank" class="category">Educação</a>
+                    <a href="catalago.html" target="_blank" class="category">Todas as categorias</a>
+                </div>
+                    </div>
+
+            <!-- Botão para alternar o tema ---------------------------------------------------------------------->
+            <button id="themeButton" onclick="toggleTheme()">Modo Escuro</button>
+            <!-- ------------------------------------------------------------------------------------------------------ -->
+
+            <a href="18touhome.html"><img src="../icons/icon_LOGO.png" class="logo"></a>
+            <img src="../icons/icon_USER.png" class="perfil">
+        </div>
+    </header>
+
+    <!-- Modo Escuro e Claro -->
+    <script>
+          // Carregar o tema salvo ao carregar a página
+          window.onload = function() {
+            const savedTheme = localStorage.getItem('theme'); // Lê o tema salvo no localStorage
+            const themeStylesheet = document.getElementById('themeStylesheet');
+            const themeButton = document.getElementById('themeButton');
+            
+            if (savedTheme === 'dark') {
+                themeStylesheet.href = '18tou-dark.css';
+                if (themeButton) themeButton.textContent = 'Modo Claro';
+            } else {
+                themeStylesheet.href = '18tou.css';
+                if (themeButton) themeButton.textContent = 'Modo Escuro';
+            }
+        };
+function toggleTheme() {
+            const themeStylesheet = document.getElementById('themeStylesheet');
+            const themeButton = document.getElementById('themeButton');
+            
+            // Segue o tema da pagina anterior
+            if (themeStylesheet.getAttribute('href') === '18tou.css') {
+                themeStylesheet.href = '18tou-dark.css'; // ativa o modo escuro
+                themeButton.textContent = 'Modo Claro';
+                localStorage.setItem('theme', 'dark'); // Salva o tema escuro
+            } else {
+                themeStylesheet.href = '18tou.css'; // volta ao modo claro
+                themeButton.textContent = 'Modo Escuro';
+                localStorage.setItem('theme', 'light'); // Salva o tema claro
+            }
+        }
+        </script>
+        <script>
+
+        
+
+        function toggleSearchBar() {
+            var searchBar = document.getElementById('searchBar');
+            var image = document.querySelector('.lupa');
+            if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                searchBar.style.display = 'block';
+                image.src = 'https://via.placeholder.com/150/ff0000/ffffff?text=Ocultar'; 
+            } else {
+                searchBar.style.display = 'none';
+                image.src = '../icons/icon_LUPA.png'; 
+            }
+        }
+
+        function filterCategories() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var categories = document.querySelectorAll('#searchCategories .category');
+            
+            categories.forEach(function(category) {
+                var text = category.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <!-- Conteúdo principal -->
+    <div class="corpo"> 
+        <div class="banner">
+            <div class="seila">
+            <h1>
+                18Eagora?
+            </h1>
+            <p>O seu site de informações confiáveis para o futuro. Aprenda como fazer o básico que não te ensinaram para iniciar a vida adulta.</p>
+            <a href="catalago.html"><button class="butum">
+                Catálago
+            </button>
+            </a>
+            <button>
+                Login
+            </button>
+        </div>
+        </div>
+        <div class="colunaum">
+            <p class="subtit">
+                Artigos recentes:
+            </p>
+            <a href="categorias/catComida.html">
+            <div class="miniview">
+                <img src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/7c44045d2e8577819cb76b2b404902dd.jpg">
+                <h2 class="titminiview">Arroz branco</h2>
+                <p>Culinária</p>
+            </div>
+            </a>
+            <a href="categorias/catLazer.html">
+            <div class="miniview">
+                <img src="https://i0.wp.com/diariodostrilhos.com/wp-content/uploads/2024/01/mapa-transporte-2024-.jpeg?resize=1080%2C650&ssl=1">
+                <h2 class="titminiview">Como não se perder no metrô?</h2>
+                <p>Lazer</p>
+            </div>
+        </a>
+            <a href="categorias/catEducacao.html">
+            <div class="miniview">
+                <img src="https://static.ibirapuera.br/wp-content/uploads/2020/07/simulado-tem-varias-questoes-vestibular-57d9a8d50b0b0.jpg">
+                <h2 class="titminiview">Um guia completo para o vestibular</h2>
+                <p>Educação</p>
+            </div>
+        </a>
+        </div>
+        <div class="colunadois">
+            <p>O “18 e agora?” é um projeto independente, feito por estudantes que querem ajudar outras pessoas que estão atingindo a maioridade e se sentem perdidos por onde começar.</p>
+        </div>
+        <div class="colunatres">
+            <img src="../Gifs/anima-home.gif">
+        </div>
+        <div class="colunaquatro">
+            <p><b>Por que criar uma conta no 18EAGR?</b>
+                <ul>
+                <li><b>Experiência personalizada: </b>receber recomendações de matérias que possam te interessar;<br></li>
+                <li><b>Comentar e avaliar matérias: </b>Deixe sua marca e opinião no site! Participe da comunidade 18EAGR?;<br></li>
+                <li><b>Histórico:</b> Marque as matérias que você leu ou quer ler.</li></p>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer>18, e agora?</footer>
+</body>
+</html>

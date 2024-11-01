@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/*Configurações gerais base*/
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Remove barras de rolagem horizontal */
+    overflow-y: auto;   /* Mantém barras de rolagem vertical se necessário */
+    background-color: #2d2d2d;
+    font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+ 
+}
+
+.anima-home{
+    width: 30%;
+}
+
+.logo{
+    width: 60px;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.lupa{ 
+    width: 40px;
+    cursor: pointer;
+}
+
+.perfil{
+    width: 40px;
+    cursor: pointer;
+}
+
+.elementosheader{
+    width: 72%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    background-color: rgba(37, 95, 133, 1);
+    color: white;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#themeButton{
+    position: absolute;
+    left: 1%;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 5px rgb(184, 184, 184) solid;
+    border-radius: 50px;
+    width: 55px;
+    height: 55px;
+    margin-left: 270px;
+}
+#themeButton:hover{
+    position: absolute;
+    left: 1%;
+    background-color: rgb(24, 63, 89);
+    color: rgb(255, 255, 255);
+    border: 1px rgba(37, 95, 133, 1) solid;
+    border-radius: 50px;
+    width: 55px;
+    height: 55px;
+    margin-left: 270px;
+}
+
+
+a{
+    list-style: none;
+    color: white;
+}
+
+
+
+/*
+a:hover{
+    background-color: #003d7d;
+    border: 5px #003d7d solid;
+    border-radius: 5px;
+}
+Barra de pesquisa-------------------------------------------------------*/
+
+#searchBar {
+    display: none; 
+    margin-top: 10px;
+    position: absolute;
+    top: 7%;
+    left: 26%;
+    border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px; /* Adiciona bordas arredondadas */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adiciona sombra */
+}
+
+#searchCategories {
+    margin-top: 10px;
+    background-color: white;
+}
+#searchCategories a {
+    display: block;
+    margin: 5px 0;
+    color: #000000;
+    text-decoration: none;
+}
+#searchCategories a:hover {
+    text-decoration: underline;
+}
+
+
+/*começo dos anunciossssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss*/
+
+.slider-container {
+    width: 100vw; /* Ocupa toda a largura da tela */
+    overflow: hidden; /* Oculta o excesso de imagens fora do contêiner */
+    position: relative;
+    background-color: white;
+    
+}
+
+.slider {
+    display: flex;
+    width: calc(100% * 4); /* Ajuste para o número de imagens */
+    animation: scroll 20s linear infinite;
+}
+
+.slide {
+    display: flex;
+    flex-direction: row; /* Imagem e informações lado a lado */
+    flex: 0 0 80vw; /* Ajusta o tamanho dos slides com base na largura da tela */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+.slider img {
+    width: 100px; /* Ajusta a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.info {
+    padding: 1rem; /* Espaçamento ao redor do texto */
+    width: 40%; /* Ajusta a largura da área de informações */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
+}
+
+.info h2 {
+    margin-top: 0;
+    font-size: 1.5rem; /* Ajusta o tamanho do título */
+    color: #000000;
+}
+
+.info p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem; /* Ajusta o tamanho da descrição */
+    color: black;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .slide {
+        flex: 0 0 90vw; /* Ajuste para telas menores */
+    }
+
+    .slider img {
+        width: 50%; /* Ajusta a largura da imagem em telas menores */
+    }
+
+    .info {
+        width: 50%; /* Ajusta a largura da área de informações em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        flex: 0 0 100vw; /* Ajuste para telas muito pequenas */
+    }
+
+    .slider img {
+        width: 40%; /* Ajusta a largura da imagem em telas muito pequenas */
+    }
+
+    .info {
+        width: 60%; /* Ajusta a largura da área de informações em telas muito pequenas */
+    }
+}
+
+/*fim dos anunciossssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss*/
+
+
+/*Div´s e Footer--------------------------------------------------------------------------------------------*/
+.conteudo{ /*pagina de conteudo*/
+    width: 70%;
+    padding-top: 10%;
+    padding-left: 4%;
+    padding-right: 4%;
+    position: relative;
+    background-color: rgb(23, 23, 23);
+    left: 0;
+    height: max-content;
+    
+    
+
+}
+
+.corpo{ /*Home e Catalaogos*/
+    width: 72%;
+    background-color: rgb(20, 20, 20);
+    position: relative;
+    left: 10%;
+    right: 10%;
+    padding-top: 10%;
+    padding-left: 4%;
+    padding-right: 4%;
+    height: 1100px;
+    
+}
+
+
+.aside{
+    background-color: #101333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    width: 20%;
+    color: white;
+    padding-top:10% ;
+    padding-left: 4%;
+    height: 100%;
+    right: 0;
+    box-shadow: 0 8px 80px rgba(0, 0, 0, 0.5);
+
+}
+
+footer{
+    background-color: rgba(37, 95, 133, 1);
+    max-width: 100%;
+    height: 5%;
+    position: absolute;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    margin-bottom: 0;
+    color: white;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000000000000000000000000000;
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+  
+/*Configurações de texto-------------------------------------------------------------------------------------*/
+
+.titlerubik {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+ .blue{
+    background-color: #101333;
+    color: #ffffff;
+    text-align: center;
+  }
+
+
+article{
+    margin: 2%;
+    padding: 2%;
+}
+
+
+.coluna2{
+    column-gap: 2;
+    column-count: 2;
+}
+
+.coluna3{
+    column-gap: 3rem;
+    column-count: 3;
+
+}
+
+.banner{
+    height: 150px;
+    width: 94%;
+    margin-left: 3%;
+    background-color: rgb(112, 20, 33);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    align-items: center;
+    display: flex;
+    float: left;
+    color: white;
+}
+
+.colunaum{
+    height: 100px;
+    width: 49%;
+    background-color: rgba(233, 114, 76, 1);
+    float: left;
+    border-radius: 10px;
+}
+
+.colunadois{
+    height: 100px;
+    width: 49%;
+    background-color: rgba(255, 200, 87, 1);
+    float: right;
+    border-radius: 10px;
+}
+
+
+.seila{
+    width: 49%;
+}
+
+.banner h1, .banner p{
+    margin-left: 10%;
+}
+
+
+.banner button{
+    border: 0;
+    width: 40%;
+    background-color: #c1c1c1;
+    border-radius: 10px;
+    height: 40px;
+    width: 167px;
+}
+.butum{
+    margin-left: 10%;
+}
+
+.caixa{
+    background-color: rgb(5, 47, 52);
+}
+
+a{
+    margin: 0;
+}

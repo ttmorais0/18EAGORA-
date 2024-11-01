@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazer</title>
+    <link rel="icon" type="image/x-icon" href="../logo/icon_LOGO_azulescuro.png" >
+
+    <script>
+        window.onblur=function (){
+        document.title="volte sempre :) ";
+        };
+        window.onfocus = function () {
+        document.title="ué, já volto? :0 ";
+        };
+    </script>
+        
+   <!-- Carregamento da folha de estilo com base no tema salvo -->
+   <link id="themeStylesheet" rel="stylesheet" href="styleCat.css">
+    
+   <script>
+       // Carregar o tema salvo ao carregar a página
+       window.onload = function() {
+           const savedTheme = localStorage.getItem('theme');
+           const themeStylesheet = document.getElementById('themeStylesheet');
+           const themeButton = document.getElementById('themeButton');
+           
+           if (savedTheme === 'dark') {
+               themeStylesheet.href = 'styleCat-dark.css';
+               if (themeButton) themeButton.textContent = 'Modo Claro';
+           } else {
+               themeStylesheet.href = 'styleCat.css';
+               if (themeButton) themeButton.textContent = 'Modo Escuro';
+           }
+       };
+
+       function toggleTheme() {
+           const themeStylesheet = document.getElementById('themeStylesheet');
+           const themeButton = document.getElementById('themeButton');
+
+           // Alternar o tema e salvar a escolha no localStorage
+           if (themeStylesheet.getAttribute('href') === 'styleCat.css') {
+               themeStylesheet.href = 'styleCat-dark.css';
+               themeButton.textContent = 'Modo Claro';
+               localStorage.setItem('theme', 'dark');  // Salva o tema escuro
+           } else {
+               themeStylesheet.href = 'styleCat.css';
+               themeButton.textContent = 'Modo Escuro';
+               localStorage.setItem('theme', 'light');  // Salva o tema claro
+           }
+       }
+   </script>
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=zlKbx8Tf"></script>
+
+    <style>
+
+  h1   {
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px; 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px; /* Adiciona uma margem negativa para compensar a margem interna dos itens */
+    
+  }
+  .col {
+    flex: 0 0 calc(30% - 10px); /* Define a largura de cada coluna */
+    margin: 20px; /* Adiciona uma margem entre as colunas */
+    background-color: #ab0505; /*Adiciona cor ao fundo das peças do catálogo*/
+    box-shadow: 0 2px 4px rgb(0, 0, 0); /* Adiciona uma sombra leve às colunas */
+    overflow: hidden;
+    /* animation: moveImages 3s ; Aplica a animação às imagens, sem isso não funciona, se escolhe o tempo que a animaçao acontece, e quantas vezes */
+   
+
+  }
+
+  @keyframes moveImages {
+        0% {
+            transform: translateX(100%); /* Começa a 100% da largura do container (totalmente à direita) */
+        }
+        100% {
+            transform: translateX(0%); /* Termina a 100% da largura do container (totalmente à esquerda) */
+        }
+        /*bem aqui, configuramos onde a imagem começa e onde termina, basicamente!!*/
+    }
+
+
+  .col img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 7px solid #000000; /* Adiciona uma borda inferior às imagens */
+  }
+  .col .info {
+    padding: 10px;
+  }
+  .col .info h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .col .info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #d3d3d3;
+  }
+        
+    </style>    
+</head>
+<body>
+
+  <header>
+    <img src="../../icons/icon_LUPA.png" class="lupa" onclick="toggleSearchBar()">
+    <div id="searchBar">
+        <input type="text" placeholder="Pesquisar" onkeyup="filterCategories()" id="searchInput">
+        <div id="searchCategories">
+            <a href="../categorias/catLazer.html" target="_blank" class="category">Lazer</a>
+            <a href="../categorias/catComida.html" target="_blank" class="category">Culinária</a>
+            <a href="../categorias/catDocumentacao.html" target="_blank" class="category">Documentação</a>
+            <a href="../categorias/catSaude.html" target="_blank" class="category">Saúde</a>
+            <a href="../categorias/catEducacao.html" target="_blank" class="category">Educação</a>
+            <a href="../catalago.html" target="_blank" class="category">Todas as categorias</a>
+        </div>
+</div>
+    <script>
+        function toggleSearchBar() {
+            var searchBar = document.getElementById('searchBar');
+            var image = document.querySelector('.lupa');
+            if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                searchBar.style.display = 'block';
+                image.src = 'https://via.placeholder.com/150/ff0000/ffffff?text=Ocultar'; 
+            } else {
+                searchBar.style.display = 'none';
+                image.src = '../../icons/icon_LUPA.png'; 
+            }
+        }
+
+        function filterCategories() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var categories = document.querySelectorAll('#searchCategories .category');
+            
+            categories.forEach(function(category) {
+                var text = category.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+<a href="../18touhome.html"> <img src="../../icons/icon_LOGO.png" class="logo"></a>
+    <img src="../../icons/icon_USER.png" class="perfil">
+
+    <button id="themeButton" onclick="toggleTheme()">Modo Escuro</button>
+</header>
+    
+    <div class="corpo"> 
+    <div class="banner">
+        <br>
+        <br>
+    <h1 style="text-align: center">Lazer</h1>
+    </div>
+        <div class="categorias">
+            <a href="">
+            <div class="caixa">
+                <img src="https://vipzinho.com.br/wp-content/uploads/2023/11/cinenapraca-vipzinho.jpg">
+                <p class="titulo">
+                    <b>Passeios culturais em São Paulo (sem gastar nada)</b>
+                        <br>
+    
+                    </p>
+                </div>
+        </a>
+            <a href=" ">
+            <div class="caixa">
+                <img src="https://media.starlightcms.io/workspaces/pague-menos/portal-sempre-bem/original/lista-de-hobbies-aexpyfr1ld.jpeg">
+                <p class="titulo">
+                <b>Como descobrir novos hobbies?</b>
+                    <br>
+
+                </p>
+            </div>   
+        </a>
+
+    </div>
+    <div class="categorias">
+        <a href="">
+        <div class="caixa">
+            <img src="https://i0.wp.com/diariodostrilhos.com/wp-content/uploads/2024/01/mapa-transporte-2024-.jpeg?resize=1080%2C650&ssl=1">
+            <p class="titulo">
+                <b>Como não se perder no metrô?</b>
+                    <br>
+
+                </p>
+            </div>
+    </a>
+        <a href=" ">
+        <div class="caixa">
+            <img src="https://oficinadeescrita.com.br/wp-content/uploads/2019/02/Como-fazer-um-livro-aprenda-quais-sao-as-partes-internas-de-um-livro-impresso-e-planeje-o-seu.jpg">
+            <p class="titulo">
+            <b>Dicas para melhorar o hábito de leitura</b>
+                <br>
+
+            </p>
+        </div>   
+    </a>
+</div>
+<div class="categorias">
+    <a href="">
+    <div class="caixa">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB63UNBdVOM3qd5_AZ6u-BDVPXqTKR18pyeA&s">
+        <p class="titulo">
+            <b>Letterboxd: a rede social de filmes</b>
+                <br>
+
+            </p>
+        </div>
+</a>
+    <a href=" ">
+    <div class="caixa">
+        <img src="https://blog.webbar.com.br/wp-content/uploads/2023/07/159304.png">
+        <p class="titulo">
+        <b>Um guia responsável de bebidas para quem nunca bebeu</b>
+            <br>
+
+        </p>
+    </div>   
+</a>
+
+</div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        h1,p{
+            font-family: "Ubuntu", sans-serif;
+        }
+        .categorias{
+            width: 100%;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .caixa{
+            color: white;
+            width: 450px;
+            height: 250px;
+            margin-left: 20px;
+            margin-right: 20px;
+            overflow: hidden;
+            transition: 0.05s;
+            border-radius: 10px;
+            background-color: rgb(85, 37, 21);
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .caixa img{
+            display: block;
+            object-fit: cover;
+            flex-shrink: 0;
+            min-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        .caixa p{
+            text-align: center;
+            margin: auto;
+            display: inherit;
+            position: absolute;
+            font-size: 30px;
+            width: 300px;
+        }
+        .caixa:hover{
+            transform: scale(1.1);
+        }
+
+        .corpo{
+            height: 1100px;
+        }
+        footer{
+            margin-top: 0;
+        }
+    </style>
+    
+    <footer>18</footer>
+</body>
+</html>
